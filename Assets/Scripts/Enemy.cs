@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject impactEffect;
     void Start()
     {
         
@@ -21,6 +22,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
+            Instantiate(impactEffect,transform.position,transform.rotation);
             Destroy(this.gameObject);
         }
     }

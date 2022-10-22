@@ -6,6 +6,8 @@ public class Shoot : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform firePoint;
+    public ParticleSystem muzzleFlash;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,7 @@ public class Shoot : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             ShootBullet();
+            muzzleFlash.Play();
         }
     }
     public void ShootBullet()
